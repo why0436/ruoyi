@@ -1112,7 +1112,11 @@ window.__require = function e(t, n, o) {
                         opacity: 255
                     }).to(.3, {
                         opacity: 0
+<<<<<<< HEAD
                     }).union().repeatForever().start(), this.lineNode.children[0].active = !1, this.fruitS = ["PuTaoS", "YingTaoS", "JuZiS", "NingMengS", "MiHouTaoS", "XiHongShiS", "TaoS", "BoLuoS", "YeZiS", "XiGuaS"], this.createOneFruit(10)//开始
+=======
+                    }).union().repeatForever().start(), this.lineNode.children[0].active = !1, this.fruitS = ["PuTaoS", "YingTaoS", "JuZiS", "NingMengS", "MiHouTaoS", "XiHongShiS", "TaoS", "BoLuoS", "YeZiS", "XiGuaS"], this.createOneFruit(0)
+>>>>>>> 93e2a7be99d64303f9ac96cc8f182617b79a9f73
                 }, t.prototype.update = function(e) {
                     a.default.GameUpdateCtrl, this.lineNode.children[0].y - n.Instance.fruitHeigth < 100 && this.lineNode.children[0].y - n.Instance.fruitHeigth >= 0 && (this.lineNode.children[0].active = !0), this.lineNode.children[0].y - n.Instance.fruitHeigth > 100 && (this.lineNode.children[0].active = !1)
                 }, t.prototype.end = function() {
@@ -1153,8 +1157,12 @@ window.__require = function e(t, n, o) {
                 }, t.prototype.createOneFruit = function(e) {
                     var t = this,
                         n = cc.instantiate(this.fruitPre);
+<<<<<<< HEAD
                     n.parent = this.lineNode, n.getComponent(cc.Sprite).spriteFrame = d.default.Instance.fruit[e], n.children[0].getComponent(cc.Sprite).spriteFrame = d.default.Instance.fruit[e], n.getComponent("fruitData").fruitNumber = e, n.position = this.lineNode.children[1].position, n.scale = 0, n.getComponent(cc.RigidBody).type = cc.RigidBodyType.Static, n.getComponent(cc.PhysicsCircleCollider).radius = 0,n.getComponent(cc.PhysicsCircleCollider).restitution=0.5,//弹性
 					n.getComponent(cc.PhysicsCircleCollider).apply(), cc.tween(n).to(.5, {
+=======
+                    n.parent = this.lineNode, n.getComponent(cc.Sprite).spriteFrame = d.default.Instance.fruit[e], n.children[0].getComponent(cc.Sprite).spriteFrame = d.default.Instance.fruit[e], n.getComponent("fruitData").fruitNumber = e, n.position = this.lineNode.children[1].position, n.scale = 0, n.getComponent(cc.RigidBody).type = cc.RigidBodyType.Static, n.getComponent(cc.PhysicsCircleCollider).radius = 0, n.getComponent(cc.PhysicsCircleCollider).apply(), cc.tween(n).to(.5, {
+>>>>>>> 93e2a7be99d64303f9ac96cc8f182617b79a9f73
                         scale: 1
                     }, {
                         easing: "backOut"
@@ -1535,10 +1543,16 @@ window.__require = function e(t, n, o) {
                 }, t.prototype.onTouchEnd = function(e) {
                     var t = this;
                     i.default.playerTouch && null != a.default.Instance.targetFruit && (a.default.Instance.targetFruit.getComponent(cc.PhysicsCircleCollider).radius = a.default.Instance.targetFruit.height / 2, a.default.Instance.targetFruit.getComponent(cc.PhysicsCircleCollider).apply(), a.default.Instance.targetFruit.getComponent(cc.RigidBody).type = cc.RigidBodyType.Dynamic, a.default.Instance.targetFruit.getComponent(cc.RigidBody).linearVelocity = cc.v2(0, -800), a.default.Instance.targetFruit = null, this.scheduleOnce(function() {
+<<<<<<< HEAD
                         i.default.GameUpdateCtrl && (0 == t.createFruitCount ? (a.default.Instance.createOneFruit(10), t.createFruitCount++) : 1 == t.createFruitCount ? (a.default.Instance.createOneFruit(9), t.createFruitCount++) : 2 == t.createFruitCount ? (a.default.Instance.createOneFruit(8), t.createFruitCount++) : 3 == t.createFruitCount ? (a.default.Instance.createOneFruit(7), t.createFruitCount++) : t.createFruitCount > 3 && (a.default.Instance.createOneFruit(s.default.RandomInteger(6, 10)), t.createFruitCount++))
                     }, .5))
                 }, //前五个，范围
 				t.prototype.closeTouch = function() {
+=======
+                        i.default.GameUpdateCtrl && (0 == t.createFruitCount ? (a.default.Instance.createOneFruit(0), t.createFruitCount++) : 1 == t.createFruitCount ? (a.default.Instance.createOneFruit(0), t.createFruitCount++) : 2 == t.createFruitCount ? (a.default.Instance.createOneFruit(1), t.createFruitCount++) : 3 == t.createFruitCount ? (a.default.Instance.createOneFruit(2), t.createFruitCount++) : 4 == t.createFruitCount ? (a.default.Instance.createOneFruit(2), t.createFruitCount++) : 5 == t.createFruitCount ? (a.default.Instance.createOneFruit(3), t.createFruitCount++) : t.createFruitCount > 5 && (a.default.Instance.createOneFruit(s.default.RandomInteger(0, 5)), t.createFruitCount++))
+                    }, .5))
+                }, t.prototype.closeTouch = function() {
+>>>>>>> 93e2a7be99d64303f9ac96cc8f182617b79a9f73
                     this.node.off(cc.Node.EventType.TOUCH_START, this.onTouchStart, this), this.node.off(cc.Node.EventType.TOUCH_MOVE, this.onTouchMove, this), this.node.off(cc.Node.EventType.TOUCH_END, this.onTouchEnd, this), this.node.off(cc.Node.EventType.TOUCH_CANCEL, this.onTouchEnd, this)
                 }, t.prototype.addScore = function() {
                     var e = r.default.Spawn("addScore", cc.find("Canvas/downEffParent"));
@@ -3356,10 +3370,17 @@ window.__require = function e(t, n, o) {
                         t.node.parent = cc.find("Canvas/fruitNode"), i.default.Instance.fruitHeigth = i.default.Instance.findHighestFruit(), null != t.node.getComponent(cc.RigidBody) && (t.node.getComponent(cc.RigidBody).angularVelocity = 0);
                         var c = this.fruitNumber,
                             r = n.node.getComponent("fruitData").fruitNumber;
+<<<<<<< HEAD
                         c == r && c <= 10 && r <= 10 ? (this.pengzhuangCount += 1, 0 == t.node.getComponent("fruitData").getNumber() && (a.default.score += this.fruitNumber + 1, u.default.Instance.SetScoreTween(a.default.score), n.node.getComponent(cc.PhysicsCircleCollider).radius = 0, n.node.getComponent(cc.PhysicsCircleCollider).apply(), this.node.getComponent(cc.PhysicsCircleCollider).radius = 0, this.node.getComponent(cc.PhysicsCircleCollider).apply(), cc.tween(t.node).to(.1, {
                             position: n.node.position
                         }).call(function() {
                             i.default.Instance.createFruitSui(o.fruitNumber, n.node.position), i.default.Instance.createFruitL(o.fruitNumber, n.node.position, n.node.width), i.default.Instance.createLevelUpFruit(o.fruitNumber - 1, n.node.position), n.node.active = !1, t.node.active = !1, n.node.destroy(), t.node.destroy()
+=======
+                        c == r && c < 9 && r < 9 ? (this.pengzhuangCount += 1, 0 == t.node.getComponent("fruitData").getNumber() && (a.default.score += this.fruitNumber + 1, u.default.Instance.SetScoreTween(a.default.score), n.node.getComponent(cc.PhysicsCircleCollider).radius = 0, n.node.getComponent(cc.PhysicsCircleCollider).apply(), this.node.getComponent(cc.PhysicsCircleCollider).radius = 0, this.node.getComponent(cc.PhysicsCircleCollider).apply(), cc.tween(t.node).to(.1, {
+                            position: n.node.position
+                        }).call(function() {
+                            i.default.Instance.createFruitSui(o.fruitNumber, n.node.position), i.default.Instance.createFruitL(o.fruitNumber, n.node.position, n.node.width), i.default.Instance.createLevelUpFruit(o.fruitNumber + 1, n.node.position), n.node.active = !1, t.node.active = !1, n.node.destroy(), t.node.destroy()
+>>>>>>> 93e2a7be99d64303f9ac96cc8f182617b79a9f73
                         }).start())) : c == r && 9 == c && 9 == r && (this.pengzhuangCount += 1, 0 == t.node.getComponent("fruitData").getNumber() && (a.default.score += this.fruitNumber + 1, u.default.Instance.SetScoreTween(a.default.score), n.node.getComponent(cc.PhysicsCircleCollider).radius = 0, n.node.getComponent(cc.PhysicsCircleCollider).apply(), this.node.getComponent(cc.PhysicsCircleCollider).radius = 0, this.node.getComponent(cc.PhysicsCircleCollider).apply(), a.default.playerTouch = !1, cc.tween(t.node).to(.1, {
                             position: n.node.position
                         }).call(function() {
